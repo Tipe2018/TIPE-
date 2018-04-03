@@ -44,7 +44,9 @@ import time
 import math
 from smbus import SMBus
 import numpy as np
-import fonctions #fichiers de toutes les fonctions de ce programme ainsi que certains réglages
+from fonctions import * 
+#fichiers de toutes les fonctions de ce programme ainsi que certains réglages
+import csv # pour convertir la liste de toutes les valeurs en csv
 
 
 
@@ -152,11 +154,11 @@ Temps=[] #Liste du temps de l'acquisition d'une valeur
 
 #Entrée de l'utilisateur
 temps=int(input("Temps d'acquisition en secondes"))
-
-tps_out=time.clock() #assurance si jamais le while fait une boucle infinie
+tps_acqui=0 # valeur du temps pour chaque mesure
 stop=0 #arret de la boucle
 boucle_ok=0 #Si le while s'effectue en entier sans problème
 
+tps_out=time.clock() #assurance si jamais le while fait une boucle infinie
 while stop ==0:
     t1 = time.clock()
 
@@ -191,7 +193,8 @@ while stop ==0:
     
     t=t2-t1 #Durée de la boucle
     temps=temps-t
-    Temps.append(t)
+    tps_acqui+=t
+    Temps.append(tps_acqui)
     
     if tps_out> temps+10: #le temps demandé par l'utilisateur est dépassé (boucle infinie)
         stop=1 
@@ -205,3 +208,7 @@ Liste=[Temps,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
 
 if stop==1 and boucle_ok==1:
     #Conversion de la liste de listes en csv
+    file=open("valeurs.csv",'w',newline='')
+    ecriture=csv.writer(file,dialect='excel',delimiter=';')
+    ecriture.writerows([["Temps","Ax","Ay","Az","Rx","Ry","Rz"]]) 
+    file.close()

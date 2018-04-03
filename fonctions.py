@@ -1,3 +1,18 @@
+# Numéro du bus utilisé
+from smbus import SMBus
+busNum = 1
+b = SMBus(busNum)
+
+''' Registres du LSM303D '''
+LSM = 0x1d #I2C Adresse du LSM303D
+LSM_WHOAMI_ID = 0b1001001 #Device self-id
+LSM_WHOAMI_ADDRESS = 0x0F
+
+''' Registres du L3GD20H '''
+LGD = 0x6b #Device I2C slave address
+LGD_WHOAMI_ADDRESS = 0x0F
+LGD_WHOAMI_ID = 0b11010111 #Device self-id
+
 '''Combinaison du bit fort/ faible''' 
 def combiner (msb,lsb):
 
@@ -14,20 +29,7 @@ def combiner (msb,lsb):
         return combinaison
 
 
-# Numéro du bus utilisé
-from smbus import SMBus
-busNum = 1
-b = SMBus(busNum)
 
-''' Registres du LSM303D '''
-LSM = 0x1d #I2C Adresse du LSM303D
-LSM_WHOAMI_ID = 0b1001001 #Device self-id
-LSM_WHOAMI_ADDRESS = 0x0F
-
-''' Registres du L3GD20H '''
-LGD = 0x6b #Device I2C slave address
-LGD_WHOAMI_ADDRESS = 0x0F
-LGD_WHOAMI_ID = 0b11010111 #Device self-id
 
 
 def detection ():
