@@ -56,6 +56,13 @@ busNum = 1
 
 b = SMBus(busNum)
 
+<<<<<<< HEAD
+
+'''Programmation des controles'''
+reglages()
+
+
+=======
 ''' D'après la datasheet du LSM303D: Registres des MSB et LSB:'''
 
 " - du magnétomètre " 
@@ -114,6 +121,7 @@ LGD_GYRO_Z_MSB = 0x2D
 
 '''Programmation des controles'''
 reglages
+>>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
 
 
 
@@ -161,6 +169,11 @@ boucle_ok=0 #Si le while s'effectue en entier sans problème
 tps_out=time.clock() #assurance si jamais le while fait une boucle infinie
 while stop ==0:
     t1 = time.clock()
+<<<<<<< HEAD
+    
+    #Accélération
+    accx,accy,accz=acceleration() 
+=======
 
     #Calcul de l'accélération"
 
@@ -173,17 +186,23 @@ while stop ==0:
     accx = accx * 0.061 * 0.001
     accy = accy * 0.061 * 0.001
     accz = accz * 0.061 * 0.001 - 0.1
+>>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
 
     Ax.append(accx)
     Ay.append(accy)
     Az.append(accz)
 
 
+<<<<<<< HEAD
+    #Gyroscope"
+    gyrox, gyroy, gyroz =gyroscope()
+=======
 #Gyroscope"
 
     gyrox = combiner(b.read_byte_data(LGD, LGD_GYRO_X_MSB), b.read_byte_data(LGD, LGD_GYRO_X_LSB))
     gyroy = combiner(b.read_byte_data(LGD, LGD_GYRO_Y_MSB), b.read_byte_data(LGD, LGD_GYRO_Y_LSB))
     gyroz = combiner(b.read_byte_data(LGD, LGD_GYRO_Z_MSB), b.read_byte_data(LGD, LGD_GYRO_Z_LSB))
+>>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
 
     Rx.append(gyrox)
     Ry.append(gyroy)

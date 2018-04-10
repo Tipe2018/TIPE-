@@ -3,6 +3,66 @@ from smbus import SMBus
 busNum = 1
 b = SMBus(busNum)
 
+<<<<<<< HEAD
+''' D'après la datasheet du LSM303D: Registres des MSB et LSB:'''
+
+" - du magnétomètre " 
+#Suivant x
+MAG_X_LSB = 0x08
+MAG_X_MSB = 0x09
+
+# suivant y
+MAG_Y_LSB = 0x0A
+MAG_Y_MSB = 0x0B
+
+#Suivant z
+MAG_Z_LSB = 0x0C 
+MAG_Z_MSB = 0x0D
+
+" - de l'accélération "
+
+#Suivant x
+ACC_X_LSB = 0x28 
+ACC_X_MSB = 0x29
+
+#Suivnt y
+ACC_Y_LSB = 0x2A 
+ACC_Y_MSB = 0x2B
+
+#Suivant z
+ACC_Z_LSB = 0x2C 
+ACC_Z_MSB = 0x2D
+
+" - de la température "
+
+TEMP_MSB = 0x05
+
+TEMP_LSB = 0x06
+
+
+"Registres de lecture du gyroscope"
+
+# Sur x
+
+LGD_GYRO_X_LSB = 0x28
+
+LGD_GYRO_X_MSB = 0x29
+
+#Sur y
+
+LGD_GYRO_Y_LSB = 0x2A
+
+LGD_GYRO_Y_MSB = 0x2B
+
+#Sur z
+
+LGD_GYRO_Z_LSB = 0x2C
+
+LGD_GYRO_Z_MSB = 0x2D
+
+
+=======
+>>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
 ''' Registres du LSM303D '''
 LSM = 0x1d #I2C Adresse du LSM303D
 LSM_WHOAMI_ID = 0b1001001 #Device self-id
@@ -141,4 +201,28 @@ def reglages ():
     
 
     #set 2000 dps full scale ???
+<<<<<<< HEAD
     b.write_byte_data(LGD, LGD_CTRL_4, 0b00110000) 
+
+def acceleration():
+    #Calcul de l'accélération"
+    accx = combiner(b.read_byte_data(LSM, ACC_X_MSB), b.read_byte_data(LSM, ACC_X_LSB))
+    accy = combiner(b.read_byte_data(LSM, ACC_Y_MSB), b.read_byte_data(LSM, ACC_Y_LSB))
+    accz = combiner(b.read_byte_data(LSM, ACC_Z_MSB), b.read_byte_data(LSM, ACC_Z_LSB))
+    
+    #Coeff appliqués ???
+    accx = accx * 0.061 * 0.001
+    accy = accy * 0.061 * 0.001
+    accz = accz * 0.061 * 0.001 - 0.1
+
+    return accx,accy,accz
+
+def gyroscope():
+    gyrox = combiner(b.read_byte_data(LGD, LGD_GYRO_X_MSB), b.read_byte_data(LGD, LGD_GYRO_X_LSB))
+    gyroy = combiner(b.read_byte_data(LGD, LGD_GYRO_Y_MSB), b.read_byte_data(LGD, LGD_GYRO_Y_LSB))
+    gyroz = combiner(b.read_byte_data(LGD, LGD_GYRO_Z_MSB), b.read_byte_data(LGD, LGD_GYRO_Z_LSB))
+
+    return gyrox, gyroy, gyroz
+=======
+    b.write_byte_data(LGD, LGD_CTRL_4, 0b00110000) 
+>>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
