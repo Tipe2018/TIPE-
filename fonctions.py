@@ -3,7 +3,6 @@ from smbus import SMBus
 busNum = 1
 b = SMBus(busNum)
 
-<<<<<<< HEAD
 ''' D'après la datasheet du LSM303D: Registres des MSB et LSB:'''
 
 " - du magnétomètre " 
@@ -61,8 +60,6 @@ LGD_GYRO_Z_LSB = 0x2C
 LGD_GYRO_Z_MSB = 0x2D
 
 
-=======
->>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
 ''' Registres du LSM303D '''
 LSM = 0x1d #I2C Adresse du LSM303D
 LSM_WHOAMI_ID = 0b1001001 #Device self-id
@@ -201,7 +198,6 @@ def reglages ():
     
 
     #set 2000 dps full scale ???
-<<<<<<< HEAD
     b.write_byte_data(LGD, LGD_CTRL_4, 0b00110000) 
 
 def acceleration():
@@ -223,6 +219,9 @@ def gyroscope():
     gyroz = combiner(b.read_byte_data(LGD, LGD_GYRO_Z_MSB), b.read_byte_data(LGD, LGD_GYRO_Z_LSB))
 
     return gyrox, gyroy, gyroz
-=======
-    b.write_byte_data(LGD, LGD_CTRL_4, 0b00110000) 
->>>>>>> 3ae677be09bf97dede8b3608be3fd187be08b250
+
+def conversion(liste): # convertit en csv
+    file=open("valeurs.csv",'w',newline='')
+    ecriture=csv.writer(file,dialect='excel',delimiter=';')
+    ecriture.writerows([liste]) 
+    file.close()
