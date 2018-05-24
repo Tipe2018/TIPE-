@@ -100,27 +100,27 @@ def detection ():
 
         LSM303D = True 
 
-        return print ('LSM303D detecte.')
+        return (print('LSM303D detecte.'))
 
     else:
 
-        print ('LSM303D non detecte sur le bus '+str(busNum)+'.')
+        print('LSM303D non detecte sur le bus '+str(busNum)+'.')
 
     if b.read_byte_data(LGD, LGD_WHOAMI_ADDRESS) == LGD_WHOAMI_ID:
 
         L3GD20H= True        
 
-        return print ('L3GD20H detecte.')
+        return (print ('L3GD20H detecte.'))
 
     else:
 
-        return print ('No L3GD20H detected on bus on I2C bus '+str(busNum)+'.')
+        return (print ('No L3GD20H detected on bus on I2C bus '+str(busNum)+'.'))
 
         
 
     if LSM303D== True and L3GD20H==True:
 
-        return print ('Tous les elements sont detectes')
+        return (print ('Tous les elements sont detectes'))
 
 
 '''==========Programmation des controles=================='''
@@ -212,14 +212,14 @@ def acceleration():
     accy = accy * 0.061 * 0.001
     accz = accz * 0.061 * 0.001 - 0.1
 
-    return accx,accy,accz
+    return (accx,accy,accz)
 
 def gyroscope():
     gyrox = combiner(b.read_byte_data(LGD, LGD_GYRO_X_MSB), b.read_byte_data(LGD, LGD_GYRO_X_LSB))
     gyroy = combiner(b.read_byte_data(LGD, LGD_GYRO_Y_MSB), b.read_byte_data(LGD, LGD_GYRO_Y_LSB))
     gyroz = combiner(b.read_byte_data(LGD, LGD_GYRO_Z_MSB), b.read_byte_data(LGD, LGD_GYRO_Z_LSB))
 
-    return gyrox, gyroy, gyroz
+    return (gyrox, gyroy, gyroz)
 
 def conversion(liste): # convertit en csv
     file=open("valeurs.csv",'w',newline='')
