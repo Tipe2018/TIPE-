@@ -1,4 +1,4 @@
-
+# -*- coding: latin-1 -*-
 #Driver for the LSM303D accelerometer and magnetometercompass
 
 
