@@ -30,7 +30,7 @@ def position (Lx,Ly,Lz,fin,n):
         vz=tau*(Lz[k]+Lz[k+1])/2 # vitesse suivant z
         vitesseZ.append(vz)
     
-    for i in range (0,n-1):
+    for i in range (0,n-2):
         px=tau*(vitesseX[i]+vitesseX[i+1])/2
         positionX.append(px)
         
