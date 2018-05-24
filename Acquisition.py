@@ -163,11 +163,12 @@ while t<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
-    print (t)
-    print ('Acceleration: ')
-    print (Ax,Ay,Az)
-    print ('Gyroscope')
-    print(Rx,Ry,Rz)
+print ('Temps')
+print (t)
+print ('Acceleration')
+print (Ax,Ay,Az)
+print ('Gyroscope')
+print(Rx,Ry,Rz)
 
 
 
