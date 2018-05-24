@@ -6,7 +6,15 @@ from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as pl
 import random as r
-
+import csv  
+file=open('valeurs.csv','r')
+file.readline() #lis la 1e lign( celle des textes)
+Lx,Ly,Lz,T=[],[],[],[]
+for ligne in file:
+    Lx.apppend(ligne[1])
+    Ly.apppend(ligne[2])
+    Lz.apppend(ligne[3])
+    T.append(ligne[0])
 def position (Lx,Ly,Lz,fin,n): 
 #L liste des accélérations,de t=0 à t=fin, n=taille de L
     vitesseX=[]
@@ -47,6 +55,7 @@ def position (Lx,Ly,Lz,fin,n):
     ax = fig.gca(projection='3d')
     ax.plot(positionX, positionY, positionZ)
     pl.show()
+position (Lx,Ly,Lz,T[len(T)-1],len(T))
 
 ##Test:
 #t=np.linspace (0,5,20)
