@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 #Driver for the LSM303D accelerometer and magnetometercompass
@@ -101,46 +102,60 @@ Temps=[] #Liste du temps de l'acquisition d'une valeur
 
 #Entrée de l'utilisateur
 temps=int(input("Temps d'acquisition en secondes"))
-tps_acqui=0 # valeur du temps pour chaque mesure
+#tps_acqui=0 # valeur du temps pour chaque mesure
 stop=0 #arret de la boucle
 boucle_ok=0 #Si le while s'effectue en entier sans problème
 
 tps_out=time.clock() #assurance si jamais le while fait une boucle infinie
-while stop ==0:
-    t1 = time.clock()
-    
-    #Accélération
-    accx,accy,accz=acceleration() 
+#while stop ==0:
+#    t1 = time.clock()
+#    
+#    #Accélération
+#    accx,accy,accz=acceleration() 
+#
+#    Ax.append(accx)
+#    Ay.append(accy)
+#    Az.append(accz)
+#
+#
+#    #Gyroscope"
+#    gyrox, gyroy, gyroz =gyroscope()
+#
+#    Rx.append(gyrox)
+#    Ry.append(gyroy)
+#    Rz.append(gyroz) 
+#  
+#    t2=time.clock()
+#    
+#    t=t2-t1 #Durée de la boucle
+#    temps=temps-t
+#    tps_acqui+=t
+#    Temps.append(tps_acqui)
+#    
+#    if tps_out> temps+10: #le temps demandé par l'utilisateur est dépassé (boucle infinie)
+#        stop=1 
+#
+#    if temps<=0:
+#        print("Fin de l'acquisition")
+#        stop=1
+#        boucle_ok=1
 
-    Ax.append(accx)
-    Ay.append(accy)
-    Az.append(accz)
-
-
-    #Gyroscope"
-    gyrox, gyroy, gyroz =gyroscope()
-
-    Rx.append(gyrox)
-    Ry.append(gyroy)
-    Rz.append(gyroz) 
-  
-    t2=time.clock()
-    
-    t=t2-t1 #Durée de la boucle
-    temps=temps-t
-    tps_acqui+=t
-    Temps.append(tps_acqui)
-    
-    if tps_out> temps+10: #le temps demandé par l'utilisateur est dépassé (boucle infinie)
-        stop=1 
-
-    if temps<=0:
-        print("Fin de l'acquisition")
-        stop=1
-        boucle_ok=1
-
-Liste=[Temps,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
+#Liste=[Temps,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
 
 if stop==1 and boucle_ok==1:
     #Conversion de la liste de listes en csv
     conversion(Liste)
+
+t=0
+t=clock()
+T=[t] #liste des moments où l'acquisition est faite
+while t<temps:
+    t1=clock()
+    accx,accy,accz=acceleration() 
+    t2=clock()
+    t=t+t2-t1
+    T.append(t)
+    print (accx,accy,accz,t)
+
+
+

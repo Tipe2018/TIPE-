@@ -48,9 +48,9 @@ def position (Lx,Ly,Lz,fin,n):
     ax.plot(positionX, positionY, positionZ)
     pl.show()
 
-#Test:
-t=np.linspace (0,5,20)
-Lx=[r.randrange(0,20,1) for i in range (20)]
-Ly=[r.randrange(0,20,1) for i in range (20)]
-Lz=[r.randrange(0,20,1) for i in range (20)]
-position(Lx,Ly,Lz,t[len(t)-1],20)
+##Test:
+#t=np.linspace (0,5,20)
+#Lx=[r.randrange(0,20,1) for i in range (20)]
+#Ly=[r.randrange(0,20,1) for i in range (20)]
+#Lz=[r.randrange(0,20,1) for i in range (20)]
+#position(Lx,Ly,Lz,t[len(t)-1],20)
