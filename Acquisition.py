@@ -156,10 +156,18 @@ while t<temps:
     t2=time.clock()
     t=t+t2-t1
     T.append(t)
+
+    Ax.append(accx)
+    Ay.append(accy)
+    Az.append(accz)
+    Rx.append(gyrox)
+    Ry.append(gyroy)
+    Rz.append(gyroz)
+    print (t)
     print ('Acceleration: ')
-    print (accx,accy,accz,t)
+    print (Ax,Ay,Az)
     print ('Gyroscope')
-    print(gyrox, gyroy, gyroz,t)
+    print(Rx,Ry,Rz)
 
 
 
