@@ -100,17 +100,17 @@ def detection ():
 
         LSM303D = True 
 
-        return print ('LSM303D détecté.')
+        return print ('LSM303D detecte.')
 
     else:
 
-        print ('LSM303D non détecté sur le bus '+str(busNum)+'.')
+        print ('LSM303D non detecte sur le bus '+str(busNum)+'.')
 
     if b.read_byte_data(LGD, LGD_WHOAMI_ADDRESS) == LGD_WHOAMI_ID:
 
         L3GD20H= True        
 
-        return print ('L3GD20H détecté.')
+        return print ('L3GD20H detecte.')
 
     else:
 
@@ -120,7 +120,7 @@ def detection ():
 
     if LSM303D== True and L3GD20H==True:
 
-        return print ('Tous les éléments sont détectés')
+        return print ('Tous les elements sont detectes')
 
 
 '''==========Programmation des controles=================='''
