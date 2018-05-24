@@ -64,7 +64,7 @@ reglages()
 
 
 '''Réglages'''
-DT = 0.01 # pris de la datsheet ???
+DT = 0.01 # pris de la datsheet
 
 #nombre pi
 PI = np.pi
@@ -74,7 +74,7 @@ RAD_TO_DEG = 57.29578
 
 
 
-AA = 0.98 #???
+AA = 0.98 
 
 
 

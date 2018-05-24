@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 # Numéro du bus utilisé
 from smbus import SMBus
 busNum = 1
