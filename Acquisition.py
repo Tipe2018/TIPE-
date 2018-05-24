@@ -39,7 +39,7 @@
 
 
 
-import time
+from time import clock
 import math
 from smbus import SMBus
 import numpy as np
