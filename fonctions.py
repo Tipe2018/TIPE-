@@ -100,7 +100,7 @@ def detection ():
 
         LSM303D = True 
 
-        return (print('LSM303D detecte.'))
+        print('LSM303D detecte.')
 
     else:
 
@@ -110,17 +110,17 @@ def detection ():
 
         L3GD20H= True        
 
-        return (print ('L3GD20H detecte.'))
+        print ('L3GD20H detecte.')
 
     else:
 
-        return (print ('No L3GD20H detected on bus on I2C bus '+str(busNum)+'.'))
+        print ('No L3GD20H detected on bus on I2C bus '+str(busNum)+'.')
 
         
 
     if LSM303D== True and L3GD20H==True:
 
-        return (print ('Tous les elements sont detectes'))
+        print ('Tous les elements sont detectes')
 
 
 '''==========Programmation des controles=================='''
