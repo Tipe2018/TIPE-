@@ -1,6 +1,7 @@
 # -*- coding: latin-1 -*-
 # Numéro du bus utilisé
 from smbus import SMBus
+import csv
 busNum = 1
 b = SMBus(busNum)
 
