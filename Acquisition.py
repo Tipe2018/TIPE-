@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 
 #Driver for the LSM303D accelerometer and magnetometercompass
 
