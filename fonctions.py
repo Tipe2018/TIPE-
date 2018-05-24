@@ -223,7 +223,7 @@ def gyroscope():
     return (gyrox, gyroy, gyroz)
 
 def conversion(liste): # convertit en csv
-    file=open("valeurs.csv",'w',newline='')
+    file=open("valeurs.csv",'w')
     ecriture=csv.writer(file,dialect='excel',delimiter=';')
     ecriture.writerows([liste]) 
     file.close()
