@@ -2,7 +2,7 @@
 'Intégrations des valeurs pour obtenir la position'
 import numpy as np
 #Pour le graphe 3D
-import matplotlib as mpl
+
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as pl
