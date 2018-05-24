@@ -39,7 +39,7 @@
 
 
 
-from time import clock
+import time
 import math
 from smbus import SMBus
 import numpy as np
@@ -148,9 +148,9 @@ t=0
 t=clock()
 T=[t] #liste des moments où l'acquisition est faite
 while t<temps:
-    t1=clock()
+    t1=time.clock()
     accx,accy,accz=acceleration() 
-    t2=clock()
+    t2=time.clock()
     t=t+t2-t1
     T.append(t)
     print (accx,accy,accz,t)
