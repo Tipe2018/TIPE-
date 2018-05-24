@@ -102,8 +102,8 @@ Temps=[] #Liste du temps de l'acquisition d'une valeur
 temps=int(input("Temps d'acquisition en secondes"))
 
 t=0
-t=time.clock()
 T=[t] #liste des moments où l'acquisition est faite
+t=time.clock()
 while t<temps:
     t1=time.clock()
     #Acquisition de l'accélération
@@ -120,12 +120,7 @@ while t<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
-print ('Temps')
-print (T)
-print ('Acceleration')
-print (Ax,Ay,Az)
-print ('Gyroscope')
-print(Rx,Ry,Rz)
+print ('Fin acquisition')
 
 Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
