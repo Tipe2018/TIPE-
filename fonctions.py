@@ -227,7 +227,7 @@ def conversion(l): # convertit liste en csv
     file=open("valeurs.csv",'w',)
     
     ecriture=csv.writer(file,dialect='excel',delimiter=';')
-    ecriture.writerow([Temps, AccX,AccY,AccZ,RotX,RotY,RotZ])
+    ecriture.writerow(['Temps', 'AccX','AccY','AccZ','RotX','RotY','RotZ'])
     for i in range (len (l[0])-1):
         ecriture.writerow([l[0][i],l[1][i],l[2][i],l[3][i],l[4][i],l[5][i],l[6][i]]) 
     file.close()
