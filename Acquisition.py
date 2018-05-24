@@ -101,10 +101,6 @@ Temps=[] #Liste du temps de l'acquisition d'une valeur
 #Entrée de l'utilisateur
 temps=int(input("Temps d'acquisition en secondes"))
 
-if stop==1 and boucle_ok==1:
-    #Conversion de la liste de listes en csv
-    conversion(Liste)
-
 t=0
 t=time.clock()
 T=[t] #liste des moments où l'acquisition est faite
