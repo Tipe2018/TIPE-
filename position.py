@@ -5,7 +5,7 @@ import matplotlib as mpl
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as pl
-
+import random as r
 
 def position (Lx,Ly,Lz,fin,n): 
 #L liste des accélérations,de t=0 à t=fin, n=taille de L
@@ -48,3 +48,8 @@ def position (Lx,Ly,Lz,fin,n):
     ax.plot(positionX, positionY, positionZ)
     pl.show()
 
+#Test:
+t=np.linspace (0,5,20)
+Lx=[r.randrange(0,20,1) for i in range (20)]
+Ly=[r.randrange(0,20,1) for i in range (20)]
+Lz=[r.randrange(0,20,1) for i in range
