@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 'Intégrations des valeurs pour obtenir la position'
 import numpy as np
 #Pour le graphe 3D
