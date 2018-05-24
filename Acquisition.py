@@ -145,7 +145,7 @@ if stop==1 and boucle_ok==1:
     conversion(Liste)
 
 t=0
-t=clock()
+t=time.clock()
 T=[t] #liste des moments où l'acquisition est faite
 while t<temps:
     t1=time.clock()
