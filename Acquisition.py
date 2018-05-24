@@ -149,11 +149,17 @@ t=time.clock()
 T=[t] #liste des moments où l'acquisition est faite
 while t<temps:
     t1=time.clock()
+    #Acquisition de l'accélération
     accx,accy,accz=acceleration() 
+    #Acquisition du gyroscope
+    gyrox, gyroy, gyroz =gyroscope()
     t2=time.clock()
     t=t+t2-t1
     T.append(t)
+    print ('Acceleration: ')
     print (accx,accy,accz,t)
+    print ('Gyroscope')
+    print(gyrox, gyroy, gyroz,t)
 
 
 
