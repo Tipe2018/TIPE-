@@ -105,6 +105,7 @@ t=0
 T=[t] #liste des moments où l'acquisition est faite
 t=time.clock()
 while t<temps:
+
     t1=time.clock()
     #Acquisition de l'accélération
     accx,accy,accz=acceleration() 
@@ -120,6 +121,7 @@ while t<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
+    time.sleep(0.5)
 print ('Fin acquisition')
 
 Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs

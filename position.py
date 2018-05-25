@@ -26,7 +26,7 @@ def position (Lx,Ly,Lz,fin,n):
     positionY=[]
     positionZ=[]
     
-    #'méthode des trapèzes'
+    #méthode des trapèzes
     tau=fin/n # tau=(b-a)/n avec a=0, b=fin
     
     for k in range (0,n-1):
