@@ -111,6 +111,7 @@ while t<temps:
     accx,accy,accz=acceleration() 
     #Acquisition du gyroscope
     gyrox, gyroy, gyroz =gyroscope()
+    time.sleep(0.5)
     t2=time.clock()
     t=t+t2-t1
     T.append(t)
@@ -121,7 +122,7 @@ while t<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
-    time.sleep(0.5)
+    
 print ('Fin acquisition')
 
 Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
