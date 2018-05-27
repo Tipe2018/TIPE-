@@ -105,7 +105,7 @@ t=0
 T=[t] #liste des moments où l'acquisition est faite
 t=time.clock()
 while t<temps:
-    time.sleep(0.5)
+    
     t1=time.clock()
     #Acquisition de l'accélération
     accx,accy,accz=acceleration() 
