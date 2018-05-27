@@ -9,9 +9,10 @@ import matplotlib.pyplot as pl
 import random as r
 import csv  
 file=open('valeurs.csv','r')
-file.readline() #lis la 1e lign( celle des textes)
+file.readline() #lis la 1e ligne( celle des textes)
 Lx,Ly,Lz,T=[],[],[],[]
-for ligne in file:
+fichier=csv.reader(file, delimiter=';')
+for ligne in fichier:
     Lx.append(ligne[1])
     Ly.append(ligne[2])
     Lz.append(ligne[3])
