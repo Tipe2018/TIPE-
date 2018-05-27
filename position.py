@@ -13,10 +13,10 @@ file.readline() #lis la 1e ligne( celle des textes)
 Lx,Ly,Lz,T=[],[],[],[]
 fichier=csv.reader(file, delimiter=';')
 for ligne in fichier:
-    Lx.append(ligne[1])
-    Ly.append(ligne[2])
-    Lz.append(ligne[3])
-    T.append(ligne[0])
+    Lx.append(eval(ligne[1]))
+    Ly.append(eval(ligne[2]))
+    Lz.append(eval(ligne[3]))
+    T.append(eval(ligne[0]))
 def position (Lx,Ly,Lz,fin,n): 
 #L liste des accélérations,de t=0 à t=fin, n=taille de L
     vitesseX=[]
@@ -28,7 +28,7 @@ def position (Lx,Ly,Lz,fin,n):
     positionZ=[]
     
     #méthode des trapèzes
-    tau=fin/n # tau=(b-a)/n avec a=0, b=fin
+    tau=float(fin)/n # tau=(b-a)/n avec a=0, b=fin
     
     for k in range (0,n-1):
         vx=tau*(Lx[k]+Lx[k+1])/2 # vitesse suivant x
