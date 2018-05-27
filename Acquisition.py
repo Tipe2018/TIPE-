@@ -111,7 +111,6 @@ while t<temps:
     accx,accy,accz=acceleration() 
     #Acquisition du gyroscope
     gyrox, gyroy, gyroz =gyroscope()
-    
     t2=time.clock()
     t=t+t2-t1
     T.append(t)
