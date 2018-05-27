@@ -21,7 +21,7 @@ MAG_Z_LSB = 0x0C
 MAG_Z_MSB = 0x0D
 
 " - de l'accélération "
-
+ 
 #Suivant x
 ACC_X_LSB = 0x28 
 ACC_X_MSB = 0x29
