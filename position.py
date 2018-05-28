@@ -68,7 +68,7 @@ def position (Lx,Ly,Lz,fin,n):
     fig=pl.figure()
     ax = fig.gca(projection='3d')
     ax.plot(positionX_orig, positionY_orig, positionZ_orig)
-    ax.plot([0],[0],'rx',linewidth=3)
+    ax.plot([0],[0],[0],'rx')
     pl.xlabel('axe des x')
     pl.ylabel('axe des y')
     
