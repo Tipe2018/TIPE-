@@ -244,9 +244,3 @@ def moy(L,n):# n nb elm moy glissante
         R.append(S/n)
     return R
 
-def origine(L):
-    orig=L[0]
-    for i in range (len(L)):
-        L[i]-=orig
-    L[0]=0
-    return L

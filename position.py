@@ -8,7 +8,13 @@ import numpy as np
 import matplotlib.pyplot as pl
 import random as r
 import csv  
-from fonctions import *
+
+def origine(L): #pour mettre la première valeur a l'origine
+    orig=L[0]
+    for i in range (len(L)):
+        L[i]-=orig
+    L[0]=0
+    return L
 
 file=open('valeurs.csv','r')
 file.readline() #lis la 1e ligne( celle des textes)
@@ -62,10 +68,12 @@ def position (Lx,Ly,Lz,fin,n):
     fig=pl.figure()
     ax = fig.gca(projection='3d')
     ax.plot(positionX_orig, positionY_orig, positionZ_orig)
+    ax.plot([0],[0],'rx',linewidth=3)
     pl.xlabel('axe des x')
     pl.ylabel('axe des y')
     
     pl.show()
+    pl.close()
 position (Lx,Ly,Lz,T[-1],len(T))
 
 ##Test:
