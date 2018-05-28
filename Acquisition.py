@@ -124,13 +124,14 @@ while t<temps:
     
 print ('Fin acquisition')
 #moyenne des valeurs pour minimiser le bruit:
-Ax_moy=moy(Ax,10)
-Ay_moy=moy(Ay,10)
-Az_moy=moy(Az,10)
-Rx_moy=moy(Rx,10)
-Ry_moy=moy(Ry,10)
-Rz_moy=moy(Rz,10)
-T_moy=moy(T,10)
+n=100
+Ax_moy=moy(Ax,n)
+Ay_moy=moy(Ay,n)
+Az_moy=moy(Az,n)
+Rx_moy=moy(Rx,n)
+Ry_moy=moy(Ry,n)
+Rz_moy=moy(Rz,n)
+T_moy=moy(T,n)
 
 Liste=[T_moy,Ax_moy,Ay_moy,Az_moy,Rx_moy,Ry_moy,Rz_moy] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
