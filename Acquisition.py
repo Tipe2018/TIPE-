@@ -123,7 +123,15 @@ while t<temps:
     Rz.append(gyroz)
     
 print ('Fin acquisition')
+#moyenne des valeurs pour minimiser le bruit:
+Ax_moy=moy(Ax,10)
+Ay_moy=moy(Ay,10)
+Az_moy=moy(Az,10)
+Rx_moy=moy(Rx,10)
+Ry_moy=moy(Ry,10)
+Rz_moy=moy(Rz,10)
+T_moy=moy(T,10)
 
-Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
+Liste=[T_moy,Ax_moy,Ay_moy,Az_moy,Rx_moy,Ry_moy,Rz_moy] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
 
