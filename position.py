@@ -1,13 +1,15 @@
 # -*- coding: latin-1 -*-
 'Intégrations des valeurs pour obtenir la position'
+
 import numpy as np
 #Pour le graphe 3D
-
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as pl
 import random as r
 import csv  
+from fonctions import *
+
 file=open('valeurs.csv','r')
 file.readline() #lis la 1e ligne( celle des textes)
 Lx,Ly,Lz,T=[],[],[],[]
@@ -17,6 +19,7 @@ for ligne in fichier:
     Ly.append(eval(ligne[2]))
     Lz.append(eval(ligne[3]))
     T.append(eval(ligne[0]))
+
 def position (Lx,Ly,Lz,fin,n): 
 #L liste des accélérations,de t=0 à t=fin, n=taille de L
     vitesseX=[]
@@ -50,12 +53,15 @@ def position (Lx,Ly,Lz,fin,n):
         pz=tau*(vitesseZ[i]+vitesseZ[i+1])/2
         positionZ.append(pz)
     
-
+    #mise à l'origine des listes
+    positionX_orig=origine(positionX)
+    positionY_orig=origine(positionY)
+    positionZ_orig=origine(positionZ)
 
     #Graphe de la position du ballon'
     fig=pl.figure()
     ax = fig.gca(projection='3d')
-    ax.plot(positionX, positionY, positionZ)
+    ax.plot(positionX_orig, positionY_orig, positionZ_orig)
     pl.xlabel('axe des x')
     pl.ylabel('axe des y')
     
