@@ -2,6 +2,8 @@
 # Numéro du bus utilisé
 from smbus import SMBus
 import csv
+from numpy import *
+
 busNum = 1
 b = SMBus(busNum)
 
@@ -231,3 +233,13 @@ def conversion(l): # convertit liste en csv
     for i in range (len (l[0])-1):
         ecriture.writerow([l[0][i],l[1][i],l[2][i],l[3][i],l[4][i],l[5][i],l[6][i]]) 
     file.close()
+
+
+def moy(L,n):# n nb elm moy glissante
+    R=[]
+    for i in range (0,len(L)-n,n):
+        S=0
+        for j in range (i,i+n):
+            S+=L[j]
+        R.append(S/n)
+    return R
