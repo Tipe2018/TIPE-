@@ -240,7 +240,7 @@ def moy(L,n):# n nb elm moy glissante
     for i in range (0,len(L)-n,n):
         S=0
         for j in range (i,i+n):
-            S+=L[j]
+            S+=L[j]*10**4
         R.append(S/n)
     return R
 
