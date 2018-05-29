@@ -10,7 +10,7 @@ import random as r
 import csv  
 
 def origine(L): #pour mettre la première valeur a l'origine
-    orig=L[0]
+    orig=L[0] 
     for i in range (len(L)):
         L[i]-=orig
     L[0]=0
