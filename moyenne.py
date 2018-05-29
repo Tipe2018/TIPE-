@@ -27,7 +27,7 @@ print (origine(L))
 L=[randrange(0,1000)for k in range (20)]
 def filtrage(L,eps): 
     for i in range (len(L)-1):
-        if abs(L[i]-L[i+1])<100:#centrale précise au cm près
+        if abs(L[i]-L[i+1])<0.01:#centrale précise au cm près
             L[i+1]=L[i]
     return L
 print (L)
