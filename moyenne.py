@@ -11,7 +11,7 @@ def moy(L,n):# n nb elm moy glissante
         R.append(S/n)
     return R
 
-print (L)
+#print (L)
 #print (moy(L,2))
 #print (len(L),len (moy(L,2)))
 
@@ -22,13 +22,15 @@ def origine(L):
     L[0]=0
     return L
 
-print (origine(L))
+#print (origine(L))
 
 L=[randrange(0,1000)for k in range (20)]
-def filtrage(L,eps): 
+def filtrage(L): 
+    #Centrale précise au cm, donc toutes décimales après 0.01 sont rendues nulles
     for i in range (len(L)-1):
-        if abs(L[i]-L[i+1])<0.01:#centrale précise au cm près
-            L[i+1]=L[i]
+        L[i]=round(L[i],2)
     return L
-print (L)
-print (filtrage(L,100))
+#print (L)
+#print (filtrage(L))
+
+print (round(4.0826,3))

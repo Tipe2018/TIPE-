@@ -245,8 +245,8 @@ def moy(L,n):# n nb elm moy glissante
     return R
 
 def filtrage(L): 
+    #Centrale précise au cm, donc toutes décimales après 0.01 sont rendues nulles
     for i in range (len(L)-1):
-        if abs(L[i]-L[i+1])<0.01:#centrale précise au cm près
-            L[i+1]=L[i]
+        L[i]=round(L[i],2)
     return L
 
