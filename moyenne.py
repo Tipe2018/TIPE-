@@ -25,12 +25,10 @@ def origine(L):
 print (origine(L))
 
 L=[randrange(0,1000)for k in range (20)]
-def filtrage(L,eps): #enlève les valuers à trop faibles variations
-    
-    L_copy=[L[0]]
+def filtrage(L,eps): 
     for i in range (len(L)-1):
-        if abs(L[i]-L[i+1])>eps:
-            L_copy.append(L[i+1])
-    return L_copy
+        if abs(L[i]-L[i+1])<100:#centrale précise au cm près
+            L[i+1]=L[i]
+    return L
 print (L)
 print (filtrage(L,100))

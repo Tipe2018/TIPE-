@@ -244,3 +244,9 @@ def moy(L,n):# n nb elm moy glissante
         R.append(S/n)
     return R
 
+def filtrage(L): 
+    for i in range (len(L)-1):
+        if abs(L[i]-L[i+1])<0.01:#centrale précise au cm près
+            L[i+1]=L[i]
+    return L
+

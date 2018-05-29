@@ -134,6 +134,11 @@ Ry_moy=moy(Ry,n)
 Rz_moy=moy(Rz,n)
 T_moy=moy(T,n)
 
-Liste=[T_moy,Ax_moy,Ay_moy,Az_moy,Rx_moy,Ry_moy,Rz_moy] #Liste des listes de valeurs
+#filtrage des valeurs dont la variation est inf au cm
+Axf=filtrage(Ax_moy)
+Ayf=filtrage(Ay_moy)
+Azf=filtrage(Az_moy)
+
+Liste=[T_moy,Axf,Ayf,Azf,Rx_moy,Ry_moy,Rz_moy] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
 
