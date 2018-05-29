@@ -125,7 +125,7 @@ while t<temps:
 print ('Fin acquisition+mise en csv')
 
 #moyenne des valeurs pour minimiser le bruit:
-n=200
+n=500 # 2000 valeurs par secondes -> 4 par secondes
 Ax_moy=moy(Ax,n)
 Ay_moy=moy(Ay,n)
 Az_moy=moy(Az,n)
