@@ -122,9 +122,10 @@ while t<temps:
     Ry.append(gyroy)
     Rz.append(gyroz)
     
-print ('Fin acquisition')
+print ('Fin acquisition+mise en csv')
+
 #moyenne des valeurs pour minimiser le bruit:
-n=100
+n=110
 Ax_moy=moy(Ax,n)
 Ay_moy=moy(Ay,n)
 Az_moy=moy(Az,n)
