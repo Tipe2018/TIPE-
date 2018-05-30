@@ -79,7 +79,7 @@ def combiner (msb,lsb):
 
     # les valeurs prises sont des valeurs de référence
 
-    combinaison = 256*msb + lsb
+    combinaison = 256*msb #+ lsb
 
     if combinaison >= 32768:
 
