@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as pl
 import random as r
 import csv  
+import simdkalman
 
 def origine(L): #pour mettre la première valeur a l'origine
     orig=L[0] 
@@ -76,6 +77,9 @@ def position (Lx,Ly,Lz,fin,n):
     pl.show()
     pl.close()
 position (Lx,Ly,Lz,T[-1],len(T))
+
+
+
 
 ##Test:
 #t=np.linspace (0,5,20)
