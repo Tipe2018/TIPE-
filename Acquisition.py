@@ -122,25 +122,25 @@ while t<temps:
     Ry.append(gyroy)
     Rz.append(gyroz)
     
-print ('Fin acquisition+mise en csv')
+print ('Fin acquisition + mise en csv')
 
-Axf=filtrage(Ax)
-Ayf=filtrage(Ay)
-Azf=filtrage(Az)
+#Axf=filtrage(Ax)
+#Ayf=filtrage(Ay)
+#Azf=filtrage(Az)
 
 #moyenne des valeurs pour minimiser le bruit:
-n=250 # 2000 valeurs par secondes -> 4 par secondes
-Ax_moy=moy(Axf,n)
-Ay_moy=moy(Ayf,n)
-Az_moy=moy(Azf,n)
-Rx_moy=moy(Rx,n)
-Ry_moy=moy(Ry,n)
-Rz_moy=moy(Rz,n)
-T_moy=moy(T,n)
+#n=250 # 2000 valeurs par secondes -> 4 par secondes
+#Ax_moy=moy(Axf,n)
+#Ay_moy=moy(Ayf,n)
+#Az_moy=moy(Azf,n)
+#Rx_moy=moy(Rx,n)
+#Ry_moy=moy(Ry,n)
+#Rz_moy=moy(Rz,n)
+#T_moy=moy(T,n)
 
 #filtrage des valeurs dont la variation est inf au cm
 
 
-Liste=[T_moy,Axf,Ayf,Azf,Rx_moy,Ry_moy,Rz_moy] #Liste des listes de valeurs
+Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
 

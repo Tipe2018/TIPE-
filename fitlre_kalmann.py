@@ -21,10 +21,10 @@ fichier=csv.reader(file, delimiter=';')
 Lx=[]
 for ligne in fichier:
     Lx.append(eval(ligne[1]))
-
+M=np.array(Lx)
 
 #Smooth all data
-smoothed = kf.smooth(Lx,initial_value = [1,0],initial_covariance = np.eye(2) * 0.5)
+smoothed = kf.smooth(M,initial_value = [1,0],initial_covariance = np.eye(2) * 0.5)
 
 # second timeseries, third time step, hidden state x
 print('mean')
@@ -33,7 +33,7 @@ print(smoothed.states.mean[0,:])
 print('covariance')
 print(smoothed.states.cov[0,:])
 #Predict new data for a single series
-predicted = kf.predict(Lx[1,2,:], 12)
+predicted = kf.predict(M[1,2,:], 12)
 
 # predicted observation y, third new time step
 pred_mean = predicted.observations.mean[2]
