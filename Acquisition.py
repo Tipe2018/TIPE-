@@ -106,8 +106,9 @@ temps=int(input("Temps d'acquisition en secondes"))
 t=0
 T=[t] #liste des moments où l'acquisition est faite
 t=time.clock()
+t0=0
 while t<temps:
-    
+    print (t0)
     t1=time.clock()
     #Acquisition de l'accélération
     accx,accy,accz=acceleration() 
@@ -123,7 +124,7 @@ while t<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
-    
+    t0+=1
 print ('Fin acquisition + mise en csv')
 
 #Axf=filtrage(Ax)
