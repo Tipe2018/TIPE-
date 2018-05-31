@@ -103,10 +103,10 @@ Temps=[] #Liste du temps de l'acquisition d'une valeur
 #Entrée de l'utilisateur
 temps=int(input("Temps d'acquisition en secondes"))
 
-t=0
-T=[t] #liste des moments où l'acquisition est faite
-t=time.clock()
 
+
+t=time.clock()
+T=[t] #liste des moments où l'acquisition est faite
 i=0
 while T[i]<temps:
     
@@ -117,7 +117,7 @@ while T[i]<temps:
     t=time.clock()-t
     T.append(T[i]+t)
     i+=1
-    print (T[i])
+    print (T[i-1])
     Ax.append(accx)
     Ay.append(accy)
     Az.append(accz)
