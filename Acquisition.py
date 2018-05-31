@@ -55,6 +55,8 @@ busNum = 1
 
 b = SMBus(busNum)
 
+'''détection  du capteur'''
+detection()
 
 '''Programmation des controles'''
 reglages()

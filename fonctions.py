@@ -83,7 +83,7 @@ def combiner (msb,lsb):
 
     if combinaison >= 32768:
 
-        return combinaison - 65536
+        return -(combinaison- 65536) #car nb signé
 
     else:
 
@@ -174,20 +174,14 @@ def reglages ():
     b.write_byte_data(LSM, CTRL_1, 0b1100111)
     #échantillonnage des relevés à 100H
 
-    
-
     #Réglage de la plage d'accéléromètre/ de mesure"
     b.write_byte_data(LSM, CTRL_2, 0b0000000) 
     #Tous les réglages sont par défaut
     # set +/- 2g (g: constante gravitationelle)
-
-    
-
+  
     #Réglage de la résolution du magnétomètre + désactivation du thermomètre"
     b.write_byte_data(LSM, CTRL_5, 0b01100100)
-    # 6.25hz ODR ???
-
-    
+    # 6.25hz ODR ??? 
 
     #Réglage de la plage de calcul du magnétomètre"
     b.write_byte_data(LSM, CTRL_6, 0b00100000)
