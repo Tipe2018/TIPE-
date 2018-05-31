@@ -205,9 +205,9 @@ def acceleration():
     accz = combiner(b.read_byte_data(LSM, ACC_Z_MSB), b.read_byte_data(LSM, ACC_Z_LSB))
     
     #Coeff appliqués ???
-    accx = accx * 0.061 * 0.001 -0.04 #accélération terre sur x
-    accy = accy * 0.061 * 0.001 -0.02
-    accz = accz * 0.061 * 0.001 - 1.01
+    #accx = accx * 0.061 * 0.001 -0.04 #accélération terre sur x
+    #accy = accy * 0.061 * 0.001 -0.02
+    #accz = accz * 0.061 * 0.001 - 1.01
 
     return (accx,accy,accz)
 
