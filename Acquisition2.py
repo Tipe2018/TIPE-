@@ -128,7 +128,7 @@ while T[i]<temps:
     time.sleep(0.001) # prend 4 mesures par secondes
 temps_boucle-=time.clock()
 print ('Fin acquisition + mise en csv')
-print ('temps boucle'+temps_boucle)
+print ('temps boucle'+str(temps_boucle)
 Axf=filtrage(Ax)
 Ayf=filtrage(Ay)
 Azf=filtrage(Az)
