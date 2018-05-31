@@ -21,7 +21,7 @@ def animation():
     can1.create_polygon(Pbis,fill="red", width=2, outline='black',tag="un")    
     fenetre.after(50,animation)
     
-def convert(NbSigne):#conversion du nombre signé
+def convert(NbSigne):#conversion du nombre signe
     if NbSigne<32768 :
         return NbSigne
     else :

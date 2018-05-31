@@ -83,7 +83,7 @@ def combiner (msb,lsb):
 
     if combinaison >= 32768:
 
-        return -(combinaison- 65536) #car nb signé
+        return combinaison- 65536 #car nb signé
 
     else:
 
