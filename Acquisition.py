@@ -128,9 +128,9 @@ while t<temps:
     T.append(t)
 print ('Fin acquisition + mise en csv')
 
-#Axf=filtrage(Ax)
-#Ayf=filtrage(Ay)
-#Azf=filtrage(Az)
+Axf=filtrage(Ax)
+Ayf=filtrage(Ay)
+Azf=filtrage(Az)
 
 #moyenne des valeurs pour minimiser le bruit:
 #n=250 # 2000 valeurs par secondes -> 4 par secondes
@@ -145,6 +145,6 @@ print ('Fin acquisition + mise en csv')
 #filtrage des valeurs dont la variation est inf au cm
 
 
-Liste=[T,Ax,Ay,Az,Rx,Ry,Rz] #Liste des listes de valeurs
+Liste=[T,Axf,Ayf,Azf,Rx,Ry,Rz] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
 
