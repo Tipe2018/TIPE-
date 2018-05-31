@@ -129,9 +129,9 @@ while T[i]<temps:
 temps_boucle-=time.clock()
 print ('Fin acquisition + mise en csv')
 print ('temps boucle'+str(temps_boucle)
-#Axf=filtrage(Ax)
-#Ayf=filtrage(Ay)
-#Azf=filtrage(Az)
+Axf=filtrage(Ax)
+Ayf=filtrage(Ay)
+Azf=filtrage(Az)
 
 #moyenne des valeurs pour minimiser le bruit:
 #n=250 # 2000 valeurs par secondes -> 4 par secondes
