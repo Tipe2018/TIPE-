@@ -125,7 +125,7 @@ while T[i]<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
-    time.tick(4) # prend 4 mesures par secondes
+    time.sleep(0.001) # prend 4 mesures par secondes
 temps_boucle-=time.clock()
 print ('Fin acquisition + mise en csv')
 print ('temps boucle'+temps_boucle)
