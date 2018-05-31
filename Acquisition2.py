@@ -117,6 +117,7 @@ while T[i]<temps:
     t=time.clock()-t
     T.append(T[i]+t)
     i+=1
+    print (T[i+1])
     Ax.append(accx)
     Ay.append(accy)
     Az.append(accz)
