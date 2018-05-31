@@ -1,7 +1,7 @@
-from tkinter import *
+from Tkinter import *
 from math import cos,sin,pi,atan
 import time
-#from smbus import SMBus
+from smbus import SMBus
 
 def animation():
     global alpha,beta,phi
