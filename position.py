@@ -76,9 +76,9 @@ def position (Lx,Ly,Lz,fin,n):
     
     pl.show()
     pl.close()
-    pl.plot(T,Lx,':')
-    pl.plot(T,Ly,':')
-    pl.plot(T,Lz,':')
+    pl.plot(T,Lx,'*')
+    pl.plot(T,Ly,'*')
+    pl.plot(T,Lz,'*')
     pl.legend(['Lx','Ly','Lz'])
     pl.show()
 position (Lx,Ly,Lz,T[-1],len(T))

@@ -124,6 +124,7 @@ while T[i]<temps:
     Rx.append(gyrox)
     Ry.append(gyroy)
     Rz.append(gyroz)
+    clock.tick(4) # prend 4 mesures par secondes
     
     
 print ('Fin acquisition + mise en csv')
