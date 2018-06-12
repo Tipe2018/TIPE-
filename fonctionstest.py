@@ -27,9 +27,9 @@ def filtrage(L,a):
     #Centrale précise au cm, donc toutes décimales après 0.01 sont rendues nulles
     for i in range (len(L)):
         if a==1: #Accélération sur x
-            L[i]=round(L[i],2)+512
+            L[i]=round(L[i],2)
         if a==2: #Accélération sur y
-            L[i]=round(L[i],2)+768
+            L[i]=round(L[i],2)
         if a==3: #Accélération sur y
-            L[i]=round(L[i],2)+15104
+            L[i]=round(L[i],2)
     return L
