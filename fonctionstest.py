@@ -1,3 +1,4 @@
+# -*- coding: latin-1 -*-
 def conversion(l): # convertit liste en csv
 
     file=open("valeurs.csv",'w',)
