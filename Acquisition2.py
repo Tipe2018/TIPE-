@@ -135,7 +135,7 @@ print ('temps boucle'+str(temps_boucle)
 #Azf=filtrage(Az)
 
 #moyenne des valeurs pour minimiser le bruit:
-#n=250 # 2000 valeurs par secondes -> 4 par secondes
+n=250 # 2000 valeurs par secondes -> 4 par secondes
 Ax_moy=moy(Axf,n)
 Ay_moy=moy(Ayf,n)
 Az_moy=moy(Azf,n)
