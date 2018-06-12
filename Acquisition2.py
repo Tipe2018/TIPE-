@@ -44,7 +44,7 @@ import math
 from smbus import SMBus
 import numpy as np
 from fonctions import * 
-from fonctionstest import *
+#from fonctionstest import *
 # fichiers de toutes les fonctions de ce programme ainsi que certains réglages
 import csv # pour convertir la liste de toutes les valeurs en csv
 
