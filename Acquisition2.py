@@ -131,23 +131,23 @@ temps_boucle-=time.clock()
 print ('Fin acquisition + mise en csv')
 print ('temps boucle'+str(temps_boucle))
 
-Axf=filtrage(Ax)
-Ayf=filtrage(Ay)
-Azf=filtrage(Az)
+Axf=filtrage(Ax,1)
+Ayf=filtrage(Ay,2)
+Azf=filtrage(Az,3)
 
 #moyenne des valeurs pour minimiser le bruit:
 n=250
-Ax_moy=moy(Axf,n)
-Ay_moy=moy(Ayf,n)
-Az_moy=moy(Azf,n)
-Rx_moy=moy(Rx,n)
-Ry_moy=moy(Ry,n)
-Rz_moy=moy(Rz,n)
-T_moy=moy(T,n)
+Ax_moy=moy(Axf,n,0)
+Ay_moy=moy(Ayf,n,0)
+Az_moy=moy(Azf,n,0)
+Rx_moy=moy(Rx,n,0)
+Ry_moy=moy(Ry,n,0)
+Rz_moy=moy(Rz,n,0)
+T_moy=moy(T,n,1)
 
 #filtrage des valeurs dont la variation est inf au cm
 
 
 Liste=[T,Axf,Ayf,Azf,Rx,Ry,Rz] #Liste des listes de valeurs
 conversion(Liste)           #Conversion de la liste de listes en csv
-
+print ('Fichier converti')

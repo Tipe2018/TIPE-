@@ -1,3 +1,5 @@
+# -*- coding: latin-1 -*-
+import csv 
 def conversion(l): # convertit liste en csv
 
     file=open("valeurs.csv",'w',)
@@ -9,17 +11,25 @@ def conversion(l): # convertit liste en csv
     file.close()
 
 
-def moy(L,n):# n nb elm moy glissante
+def moy(L,n,t):# n nb elm moy glissante
     R=[]
     for i in range (0,len(L)-n,n):
         S=0
         for j in range (i,i+n):
-            S+=L[j]*10 # car mesuré en accélération (g)
+            if t==1:
+                S+=L[j] #car on ne doit pas appliquer le coeff au temps
+            if t==0:
+                S+=L[j]*10 # car mesuré en accélération (g)
         R.append(S/n)
     return R
 
-def filtrage(L): 
+def filtrage(L,a): 
     #Centrale précise au cm, donc toutes décimales après 0.01 sont rendues nulles
     for i in range (len(L)):
-        L[i]=round(L[i],2)
+        if a==1: #Accélération sur x
+            L[i]=round(L[i],2) + 640
+        if a==2: #Accélération sur y
+            L[i]=round(L[i],2)+896
+        if a==3: #Accélération sur y
+            L[i]=round(L[i],2)+15104
     return L
